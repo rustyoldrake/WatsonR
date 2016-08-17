@@ -9,6 +9,20 @@
 #'  @export
 
 watson.keys.load <- function() {
+  library(RCurl) # install.packages("RCurl") # if the package is not already installed
+  library(httr)
+  library(audio)
+  library(data.table)
+  library(dplyr)
+  library(reshape2)
+  library(Rtts)
+  library(splitstackshape)
+  library(seewave) # need to play wav back?
+  library(stringr)
+  library(splitstackshape)
+  library(tidyr)
+  library(XML)
+  library(png)
   print("This Function will Load your API keys from KEYS.R file if it is in working directory here:")
   print(getwd())
   source("R/keys.R") # this files is where you put your Access Credentials from Bluemix (username and password)

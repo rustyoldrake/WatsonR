@@ -15,7 +15,6 @@ watson.nlc.createnewclassifier <- function(file,classifiername) {
          )}
 
 
-
 #' WatsonR - Natural Language Classifier (NLC) - LIST
 #'
 #' NLC2
@@ -78,7 +77,7 @@ watson.nlc.checkclassifierstatus <- function(classifier_id) {
 ###### NLC FUNCTION: ACCEPT QUERY & RETURN RESULT: CLASSIFIER and % FROM TEXT INPUT AND PROCESS TO LOOK GOOD
 watson.nlc.processtextreturnclass <- function(classifier_id,query_text){
   query_text <- URLencode(query_text)
-  data <- getURL(paste(base_url_NLC,classifier_id,"/classify","?text=", query_text,sep=""),userpwd = username_password_NLC)
+  data <- getURL(paste(base_url_nlc,classifier_id,"/classify","?text=", query_text,sep=""),userpwd = username_password_NLC)
   data <- as.data.frame(strsplit(as.character(data),"class_name"))
   data <- data[-c(1), ] # remove dud first row
   data <- gsub("[{}]","", data)

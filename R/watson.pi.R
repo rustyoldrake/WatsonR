@@ -19,7 +19,7 @@ watson.pi.analyze <- function(text_passage) {
            body = text_passage)
       ##data
       ##return(response)
-      content(data,"text")
+      # content(data,"text")
       ## 400 erros come sometimes if not enough words
       data <- as.data.frame(strsplit(as.character(data),"\"id\":\""))
       data <- data[-c(1:5), ] # remove dud first row
@@ -39,7 +39,6 @@ watson.pi.analyze <- function(text_passage) {
       data$error <- round((as.numeric(data$error)),4) # if you prefer % format like this
       rownames(data) <- NULL # resets row names to remove 'gaps'
       data$row <- as.numeric(rownames(data))
-      data
       return(data)
 }
 
@@ -53,7 +52,7 @@ watson.pi.analyze <- function(text_passage) {
 watson.pi.demo <- function() {
   print("Loading Text for Ronald Reagan Speech 1986 - Space Shuttle Challenger")
   text <-  read.table("data/ronald_reagan_speech.txt", fill=TRUE, header=FALSE)
-  ##I Think this is erroing out on my build - mey be issue here 
+  ##I Think this is erroing out on my build - mey be issue here
   watson.pi.analyze(text[1,])
 }
 

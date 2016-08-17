@@ -6,10 +6,10 @@
 \usage{
 watson.tts.listvoices()
 }
+\value{
+list of voices from the TTS service
+}
 \description{
 Text to Speech - LIst of Voices
- @param NONE
- @return list of voices from the TTS service
- @export
 }
 

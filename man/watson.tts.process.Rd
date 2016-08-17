@@ -6,10 +6,13 @@
 \usage{
 watson.tts.process(transcript, voice_number)
 }
+\arguments{
+\item{TEXT}{to be made into audio; and Index 1-12 of Voice (see watson.tts.listvoices() for list)}
+}
+\value{
+NOTHING
+}
 \description{
 Text to Speech
- @param TEXT to be made into audio; and Index 1-12 of Voice (see watson.tts.listvoices() for list)
- @return NOTHING
- @export
 }
 

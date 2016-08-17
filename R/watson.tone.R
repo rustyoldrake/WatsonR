@@ -38,3 +38,17 @@ watson.tone.analyze <- function(utterance) {
 }
 
 
+#' WatsonR - Tone Analyzer - Demo
+#'
+#'  Tone Analysis Demo
+#'  @param Demo String
+#'  @return NOTHING
+#'  @export
+
+watson.tone.demo <- function() {
+  print("EXAMPLE: Angry and Confident person:")
+  print("I am so angry that I got a speeding ticket. I'm certain it's the last time!")
+  watson.tone.analyze("I am so angry that I got a speeding ticket. I'm certain it's the last time!")
+}
+
+

@@ -41,7 +41,7 @@ watson.stt.test <- function() {
   data <- POST(url="https://stream.watsonplatform.net/speech-to-text/api/v1/recognize",
                authenticate(username_STT,password_STT),
                add_headers("Content-Type"="audio/wav"),
-               body = (file = upload_file("R/speech_test.wav"))
+               body = (file = upload_file("media/STT_speech_test.wav"))
   )
 
   print(data$status_code) # print a 200 if all is well

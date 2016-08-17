@@ -6,10 +6,10 @@
 \usage{
 watson.tts.demovoices()
 }
+\value{
+Everyone Talks
+}
 \description{
 Text to Speech - LIst of Voices
- @param NONE
- @return Everyone Talks
- @export
 }
 

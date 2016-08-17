@@ -1,9 +1,9 @@
 #' WatsonR - Text to Speech (TTS) - Speechify the Transcript; demand the voice you want
 #'
-#'  Text to Speech
-#'  @param TEXT to be made into audio; and Index 1-12 of Voice (see watson.tts.listvoices() for list)
-#'  @return NOTHING
-#'  @export
+#' Text to Speech
+#' @param TEXT to be made into audio; and Index 1-12 of Voice (see watson.tts.listvoices() for list)
+#' @return NOTHING
+#' @export
 
 watson.tts.process <- function(transcript,voice_number) {
       library(RCurl) # install.packages("RCurl") # if the package is not already installed
@@ -39,10 +39,10 @@ watson.tts.process <- function(transcript,voice_number) {
 
 #' WatsonR - Text to Speech (TTS) - List Voices Available From services
 #'
-#'  Text to Speech - LIst of Voices
-#'  @param NONE
-#'  @return list of voices from the TTS service
-#'  @export
+#' Text to Speech - LIst of Voices
+#' @param NONE
+#' @return list of voices from the TTS service
+#' @export
 
 watson.tts.listvoices <- function()
 {
@@ -80,48 +80,49 @@ watson.tts.listvoices <- function()
 
 #' WatsonR - Text to Speech (TTS) - Round The World Introductions -
 #'
-#'  Text to Speech - LIst of Voices
-#'  @param NONE
-#'  @return Everyone Talks
-#'  @export
+#' Text to Speech - LIst of Voices
+#' @param NONE
+#' @return Everyone Talks
+#' @export
 
 watson.tts.demovoices <- function()
 {
+  t <- 3 # time delay
   print("en-GB_KateVoice")
-  watson.tts.process("I am Kate from the UK",1)
-  wait(1)
+  watson.tts.process("I am Kate from the United Kingdom",1)
+  wait(t)
   print("ja-JP_EmiVoice")
-  watson.tts.process("Hai Japan Japan",2)
-  wait(1)
+  watson.tts.process("ho Japan. Em i",2)
+  wait(t)
   print("en-US_AllisonVoice")
-  watson.tts.process("I am Allison from USA",3)
-  wait(1)
+  watson.tts.process("I am Allison from Boise, Idaho",3)
+  wait(t)
   print("fr-FR_ReneeVoice")
   watson.tts.process("Bonjour! Vive la France",4)
-  wait(1)
+  wait(t)
   print("it-IT_FrancescaVoice")
-  watson.tts.process("Ciao! Io parlo Italiano. Italiano",5)
-  wait(1)
+  watson.tts.process("Ciao! Io parlo Italiano.",5)
+  wait(t)
   print("es-ES_LauraVoice")
-  watson.tts.process("Hola, Soy Laura, Espana, Spain",6)
-  wait(1)
+  watson.tts.process("Hola, Soy Laura, Espana",6)
+  wait(t)
   print("de-DE_BirgitVoice")
   watson.tts.process("Deutchland. Danka. Angela Merkel",7)
-  wait(1)
+  wait(t)
   print("es-ES_EnriqueVoice")
-  watson.tts.process("Hola, Soy Enrique. Futbal",8)
-  wait(1)
+  watson.tts.process("Hola, Soy Enrique. Futbol",8)
+  wait(t)
   print("de-DE_DieterVoice")
-  watson.tts.process("Deutchland. Danka. David Hasselhoff",9)
-  wait(1)
+  watson.tts.process("Deutchland. Danka David Hasselhoff",9)
+  wait(t)
   print("en-US_LisaVoice")
-  watson.tts.process("Good Afternoon. I'm your Boss Lisa.  From USA.",10)
-  wait(1)
+  watson.tts.process("Good Afternoon. I'm your Boss Lisa from New York City",10)
+  wait(t)
   print("en-US_MichaelVoice")
-  watson.tts.process("Hello. I am Michael Robot, From the USA",11)
-  wait(1)
+  watson.tts.process("Hello. I am Michael the Robot, From USA",11)
+  wait(t)
   print("es-US_SofiaVoice")
-  watson.tts.process("Ola!  Soy Sofia.  Espaniol",12)
-  wait(1)
+  watson.tts.process("Ola!  Soy Sofia.  Espanol",12)
+  wait(t)
 }
 
