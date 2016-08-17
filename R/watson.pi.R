@@ -43,4 +43,19 @@ watson.pi.analyze <- function(text_passage) {
       return(data)
 }
 
+#' WatsonR - Personality Insights (PI) - DEMO
+#'
+#'  Personality Insights - Demo using a Ronald Reagan Speech
+#'  @param Pulls Ronald Reagan speech that is included in the library
+#'  @return 52 Psychometric traits - big 5, needs, values, personalit
+#'  @export
+
+watson.pi.demo <- function() {
+  print("Loading Text for Ronald Reagan Speech 1986 - Space Shuttle Challenger")
+  text <-  read.table("data/ronald_reagan_speech.txt", fill=TRUE, header=FALSE)
+  ##I Think this is erroing out on my build - mey be issue here 
+  watson.pi.analyze(text[1,])
+}
+
+
 
