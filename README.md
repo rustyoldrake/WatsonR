@@ -3,8 +3,10 @@ A package for R to engage Watson Developer Cloud Services
 
 # Status - Aug 16th
     Status  AUG 16th 2015 - Package is Partially Complete 
-    DONE:   Alchemy, Tone, Personality Insights, Speech to Text, and Text to Speech (basics)
-    SOON:   Natural Language Classifier (NLC);  DEMO; and being less ham fisted with loading libraries & credentials
+    DONE:   Alchemy, Tone, Personality Insights, Speech to Text, and Text to Speech (basics);
+            Natural Language Classifier (NLC);  
+    SOON:   DEMO At Aggregate; and being less ham fisted with loading libraries & credentials
+    FIX:    Build error that looks related to PI Text import
     Q4:     Once functionality is established across features, will code review with an R Guru and tighten up
 
 # Objective
@@ -28,6 +30,7 @@ MACRO Demo - There are a bunch of other little demos, so probably just calls the
 
 # watson.status 
 What's happening. May not keep this - but there are some things that take time - like NLC training.
+May also holler out to API's it has creds for
 
 -----------------
 
