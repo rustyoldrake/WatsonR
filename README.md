@@ -13,7 +13,7 @@ A package for R to engage Watson Developer Cloud Services
 To create a WatsonR package that is available for the R Programming language that can be used by R programmers to access IBM Watson Developer Cloud (WDC) Services.  
 https://www.ibm.com/watson/developercloud/services-catalog.html
 
-![alt tag](https://dreamtolearn.com/internal/doc-asset/CLEWIK5HHUM3CW8RHNAGNN75W/WatsonR_Description_Aug_16.png)
+![alt tag](https://dreamtolearn.com/internal/doc-asset/CLEWIK5HHUM3CW8RHNAGNN75W/RRR.png)
 
 
 # watson.keys 
