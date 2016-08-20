@@ -3,7 +3,7 @@
 # The watson.keys.load will let you modify this if you like
 
 # NOT TESTED YET - How many services you can stand up at one time on a FREE / 30 Day Trial
-# NEEDS WORK
+# NEEDS WORK #
 
 # ALCHEMY Language - AUTHENTICATION / CREDENTIALS  - Platinum
 username_password_ALCH <- "xxxxf30440aaa160dd1da4d8126c6b285"

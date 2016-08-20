@@ -14,7 +14,7 @@ watson.alchemy.test <- function() {
 
 #' WatsonR - Alchemy Language COMBINED Calles
 #'
-#'  Alchemy Language Functions - Receives text and returns MULTPLE Features like keyword, entity, sentiment, tone
+#'  Alchemy Language Functions -- Receives text and returns MULTPLE Features like keyword, entity, sentiment, tone
 #'  @param String to be Analyzed by Alchemy's combined call
 #'  @return JSON formatted like this http://www.alchemyapi.com/api/combined/textc.html
 #'  @export

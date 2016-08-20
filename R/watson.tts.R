@@ -16,7 +16,7 @@ watson.tts.process <- function(transcript,voice_number) {
       print("Text to Speech - Sending Transcript to TTS service....")
 
       url <- "https://stream.watsonplatform.net/text-to-speech/api/v1/synthesize"
-      #transcript <- URLencode("The quick brown fox jumped over the lazy crazy dog that barked")
+      ## transcript <- URLencode("The quick brown fox jumped over the lazy crazy dog that barked")
       transcript <- URLencode(transcript)
       voice <- "en-GB_KateVoice" # or en-US_LisaVoice
       filename <- "audio_file.wav"

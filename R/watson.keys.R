@@ -1,4 +1,3 @@
-
 #' WatsonR - Load API Keys from KEYS.R file
 #'
 #' This Function will Load your API keys from KEYS.R file if it is in working directory
@@ -40,7 +39,7 @@ watson.keys.load <- function() {
 
 watson.keys.display <- function() {
       print("This Function Displays your Existing API Keys for the IBM Watson Services")
-      # ALCHEMY Language - AUTHENTICATION / CREDENTIALS  - Platinum
+      # ALCHEMY Language -- AUTHENTICATION / CREDENTIALS  - Platinum
       print(paste("1 - Alchemy Key: " , username_password_ALCH))
       print(paste("2 - Tone Key: " , username_password_TON))
       print(paste("3 - Personality Insight Key: " , username_password_PI))

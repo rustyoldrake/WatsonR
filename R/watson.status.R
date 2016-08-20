@@ -6,7 +6,7 @@
 #'  @export
 
 watson.status <- function() {
-      print("Checks how your stuff is going - API access, classifiers, jobs")
+      print("Checks how your stuff is going -- API access, classifiers, jobs")
 }
 
 

@@ -6,7 +6,7 @@
 #'  @export
 
 watson.demo <- function() {
-      print("FULL Demo that will do all availalbe services -and also train NLC with Ground truth ")
+      print("FULL Demo that will do all availalbe services - and also train NLC with Ground truth ")
 }
 
 

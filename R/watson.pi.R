@@ -44,7 +44,7 @@ watson.pi.analyze <- function(text_passage) {
 
 #' WatsonR - Personality Insights (PI) - DEMO
 #'
-#'  Personality Insights - Demo using a Ronald Reagan Speech
+#'  Personality Insights - Demo using a Ronald Reagan Speech #
 #'  @param Pulls Ronald Reagan speech that is included in the library
 #'  @return 52 Psychometric traits - big 5, needs, values, personalit
 #'  @export

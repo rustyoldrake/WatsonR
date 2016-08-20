@@ -5,7 +5,7 @@
 #'  @return NOTHING
 #'  @export
 
-###### NLC FUNCTION CREATE NEW CLASSIFIER - post /v1/classifiers - Creates a classifier with CSV data ## URL below no "/" after base url
+####### NLC FUNCTION CREATE NEW CLASSIFIER - post /v1/classifiers - Creates a classifier with CSV data ## URL below no "/" after base url
 watson.nlc.createnewclassifier <- function(file,classifiername) {
   return(POST(url="https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers",
               authenticate(username_NLC,password_NLC),
