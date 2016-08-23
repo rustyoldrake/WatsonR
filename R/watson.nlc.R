@@ -113,27 +113,4 @@ watson.nlc.deleteclassifier <- function(kill_classifier) {
 }
 
 
-#' WatsonR - Natural Language Classifier (NLC) - PROCESS TEXT
-#'
-#'  NLC6
-#'  @param  Text to Process
-#'  @return Classes and % Confidence
-#'  @export
-
-###### NLC FUNCTION: ACCEPT QUERY & RETURN RESULT: CLASSIFIER and % FROM TEXT INPUT AND PROCESS TO LOOK GOOD
-watson.nlc.processtextreturnclass <- function(classifier_id,query_text){
-  query_text <- URLencode(query_text)
-  data <- RCurl::getURL(paste(base_url_nlc,classifier_id,"/classify","?text=", query_text,sep=""),userpwd = username_password_NLC)
-  data <- as.data.frame(strsplit(as.character(data),"class_name"))
-  data <- data[-c(1), ] # remove dud first row
-  data <- gsub("[{}]","", data)
-  data <- gsub("confidence","", data)
-  data <- data.frame(matrix(data))
-  data.table::setnames(data,("V1"))
-  data$V1 <- gsub("\"","", data$V1)
-  data$V1 <- gsub(":","", data$V1)
-  data$V1 <- gsub("]","", data$V1)
-  data <- splitstackshape::cSplit(data, 'V1', sep=",", type.convert=FALSE)
-  data.table::setnames(data,c("class","confidence"))
-  return(data) }
 
