@@ -1,20 +1,16 @@
 # WatsonR
 A package for R to engage Watson Developer Cloud Services  
 
-# Status - Aug 16th
-    Status  AUG 16th 2015 - Package is Partially Complete 
+# Status - Aug 23rd
+    STATUS: STILL IN DEVELOPMENT - CAN PULL CODE - MUCH WILL WORK - BUT NOT INSTALLING CLEAN AS OF AUG 23
     DONE:   Alchemy, Tone, Personality Insights, Speech to Text, and Text to Speech (basics);
-            Natural Language Classifier (NLC);  
-    SOON:   DEMO At Aggregate; and being less ham fisted with loading libraries & credentials
-    FIX:    Build error that looks related to PI Text import
+            Natural Language Classifier (NLC); 
+    SOON:   DEMO At Aggregate; and being less ham fisted with loading libraries & credentials; VIsion
     Q4:     Once functionality is established across features, will code review with an R Guru and tighten up
 
 # Objective
 To create a WatsonR package that is available for the R Programming language that can be used by R programmers to access IBM Watson Developer Cloud (WDC) Services.  
 https://www.ibm.com/watson/developercloud/services-catalog.html
-
-![alt tag](https://dreamtolearn.com/internal/doc-asset/CLEWIK5HHUM3CW8RHNAGNN75W/RRR.png)
-
 
 # watson.keys 
 enter in keys / authenticate
