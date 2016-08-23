@@ -1,5 +1,5 @@
 # WatsonR
-A package for R to engage Watson Developer Cloud Services 
+A package for R to engage Watson Developer Cloud Services  
 
 # Status - Aug 16th
     Status  AUG 16th 2015 - Package is Partially Complete 

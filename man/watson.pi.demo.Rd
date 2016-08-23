@@ -7,7 +7,7 @@
 watson.pi.demo()
 }
 \description{
-Personality Insights - Demo using a Ronald Reagan Speech
+Personality Insights - Demo using a Ronald Reagan Speech #
  @param Pulls Ronald Reagan speech that is included in the library
  @return 52 Psychometric traits - big 5, needs, values, personalit
  @export
