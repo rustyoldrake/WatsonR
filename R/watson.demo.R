@@ -47,9 +47,6 @@ watson.demo <- function() {
   watson.tts.listvoices()
   watson.tts.demovoices()
   watson.tts.process("My name is Julia. Cambridge is better than Oxford. Do you agree?",1)
-
-
-
 }
 
 
