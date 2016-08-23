@@ -7,17 +7,17 @@
 
 watson.tone.analyze <- function(utterance) {
 
-      library(RCurl) # to talk to Watson - REST APIS # install.packages("RCurl") # if the package is not already installed
-      library(httr) # comms
-      library(XML)  # comms and data
-      library(data.table) # data shaping
-      library(reshape2) # data shaping
-      library(tidyr) # data cleaning
-      library(dplyr) # data cleaning
+      # library(RCurl) # to talk to Watson - REST APIS # install.packages("RCurl") # if the package is not already installed
+      # library(httr) # comms
+      # library(XML)  # comms and data
+      # library(data.table) # data shaping
+      # library(reshape2) # data shaping
+      # library(tidyr) # data cleaning
+      # library(dplyr) # data cleaning
 
       print("Tone Analyzer - Analyzing...")
       utterance <- URLencode(utterance)
-      data <- getURL(paste("https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2016-05-19&text=",utterance,sep=""),userpwd = username_password_TON )
+      data <- RCurl::getURL(paste("https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2016-05-19&text=",utterance,sep=""),userpwd = username_password_TON )
       data <- as.data.frame(strsplit(as.character(data),"\"score\""))
       data <- data[-c(1), ] # remove dud first row
       data  <- gsub("\"tone_id\":","",data)
@@ -32,7 +32,7 @@ watson.tone.analyze <- function(utterance) {
       data$X1 <- as.character.numeric_version(data$X1) # not sure why, but coercing to numbers requires this
       data$X1 <- as.numeric(data$X1)
       data$X1 <- round((data$X1),2)
-      setnames(data,c("trait","signal"))
+      data.table::setnames(data,c("trait","signal"))
       data
       return(data)
 }

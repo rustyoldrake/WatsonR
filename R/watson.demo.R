@@ -35,12 +35,12 @@ watson.demo <- function() {
   NLC_name <- paste("sorting_hat_",sample(1:1000,1),sep="")
   watson.nlc.createnewclassifier("data/nlc_sortinghat.csv",NLC_name)
   watson.nlc.listallclassifiers()
-  watson.nlc.checkclassifierstatus("33ffe6x85-nlc-1358") #
-  watson.nlc.processtextreturnclass("33ffe6x85-nlc-1358","nasty jerk who screams at kids")
-  watson.nlc.deleteclassifier("33ffe6x85-nlc-1358")
+  watson.nlc.checkclassifierstatus("33fffex86-nlc-1350") #
+  watson.nlc.processtextreturnclass("33fffex86-nlc-1350","nasty jerk who screams at kids")
+  watson.nlc.deleteclassifier("33fffex86-nlc-1350")
 
   # WATSON.STT
-  watson.stt.test() # takes WAV file STT_speech_test.wav and sends to STT for transcript
+  watson.stt.test() # takes FOX.WAV file STT_speech_test.wav and sends to STT for transcript
   watson.stt.process("media/ryan_raspberry_pi_test.wav") # bigger sample
 
   # WATSON.TTS

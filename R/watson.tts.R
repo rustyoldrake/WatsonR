@@ -6,23 +6,16 @@
 #' @export
 
 watson.tts.process <- function(transcript,voice_number) {
-      library(RCurl) # install.packages("RCurl") # if the package is not already installed
-      library(httr)
-      library(audio)
-      library(splitstackshape)
-
       voice_list <- watson.tts.listvoices()
-
       print("Text to Speech - Sending Transcript to TTS service....")
-
       url <- "https://stream.watsonplatform.net/text-to-speech/api/v1/synthesize"
       ## transcript <- URLencode("The quick brown fox jumped over the lazy crazy dog that barked")
       transcript <- URLencode(transcript)
       voice <- "en-GB_KateVoice" # or en-US_LisaVoice
-      filename <- "audio_file.wav"
+      filename <- "media/audio_file.wav"
 
-      the_audio = CFILE(filename, mode="wb")
-      curlPerform(url = paste(url,"?text=",transcript,"&voice=",voice_list[voice_number,],sep=""),
+      the_audio = RCurl::CFILE(filename, mode="wb")
+      RCurl::curlPerform(url = paste(url,"?text=",transcript,"&voice=",voice_list[voice_number,],sep=""),
                   userpwd = username_password_TTS,
                   httpheader=c(accept="audio/wav"),
                   writedata = the_audio@ref)
@@ -46,18 +39,14 @@ watson.tts.process <- function(transcript,voice_number) {
 
 watson.tts.listvoices <- function()
 {
-  library(RCurl) # install.packages("RCurl") # if the package is not already installed
-  library(httr)
-  library(splitstackshape)
-
-  voices <- GET(url=paste("https://stream.watsonplatform.net/text-to-speech/api/v1/voices"),authenticate(username_TTS,password_TTS))
-  data <- content(voices,"text")
+  voices <- httr::GET(url=paste("https://stream.watsonplatform.net/text-to-speech/api/v1/voices"),authenticate(username_TTS,password_TTS))
+  data <- httr::content(voices,"text")
   data <- as.data.frame(strsplit(as.character(data),"name"))
   data <- data[-c(1:2), ] # remove dud first row
   data <- strsplit(as.character(data),",")
   data <- data.frame(matrix(data))
   colnames(data) <- "V1"
-  data <- cSplit(data, 'V1', sep="\"", type.convert=FALSE)
+  data <- splitstackshape::cSplit(data, 'V1', sep="\"", type.convert=FALSE)
   data <- data.frame(data$V1_04)
   data[,1]  <- gsub("\\\\","",data[,1] )
   return(data)
@@ -88,41 +77,41 @@ watson.tts.listvoices <- function()
 watson.tts.demovoices <- function()
 {
   t <- 3 # time delay
-  print("en-GB_KateVoice")
+  print("en-GB_KateVoice - UK")
   watson.tts.process("I am Kate from the United Kingdom",1)
-  wait(t)
-  print("ja-JP_EmiVoice")
+  Sys.sleep(t)
+  print("ja-JP_EmiVoice - Japan")
   watson.tts.process("ho Japan. Em i",2)
-  wait(t)
-  print("en-US_AllisonVoice")
+  Sys.sleep(t)
+  print("en-US_AllisonVoice - USA")
   watson.tts.process("I am Allison from Boise, Idaho",3)
-  wait(t)
-  print("fr-FR_ReneeVoice")
+  Sys.sleep(t)
+  print("fr-FR_ReneeVoice - France")
   watson.tts.process("Bonjour! Vive la France",4)
-  wait(t)
-  print("it-IT_FrancescaVoice")
+  Sys.sleep(t)
+  print("it-IT_FrancescaVoice - Italy")
   watson.tts.process("Ciao! Io parlo Italiano.",5)
-  wait(t)
-  print("es-ES_LauraVoice")
+  Sys.sleep(t)
+  print("es-ES_LauraVoice - Spain")
   watson.tts.process("Hola, Soy Laura, Espana",6)
-  wait(t)
-  print("de-DE_BirgitVoice")
+  Sys.sleep(t)
+  print("de-DE_BirgitVoice - Germany")
   watson.tts.process("Deutchland. Danka. Angela Merkel",7)
-  wait(t)
-  print("es-ES_EnriqueVoice")
+  Sys.sleep(t)
+  print("es-ES_EnriqueVoice - Spain")
   watson.tts.process("Hola, Soy Enrique. Futbol",8)
-  wait(t)
-  print("de-DE_DieterVoice")
+  Sys.sleep(t)
+  print("de-DE_DieterVoice - Germany")
   watson.tts.process("Deutchland. Danka David Hasselhoff",9)
-  wait(t)
-  print("en-US_LisaVoice")
+  Sys.sleep(t)
+  print("en-US_LisaVoice - USA")
   watson.tts.process("Good Afternoon. I'm your Boss Lisa from New York City",10)
-  wait(t)
-  print("en-US_MichaelVoice")
+  Sys.sleep(t)
+  print("en-US_MichaelVoice - USA")
   watson.tts.process("Hello. I am Michael the Robot, From USA",11)
-  wait(t)
-  print("es-US_SofiaVoice")
+  Sys.sleep(t)
+  print("es-US_SofiaVoice - US Spanish")
   watson.tts.process("Ola!  Soy Sofia.  Espanol",12)
-  wait(t)
+  Sys.sleep(t)
 }
 

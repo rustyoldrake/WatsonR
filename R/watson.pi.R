@@ -7,13 +7,10 @@
 
 watson.pi.analyze <- function(text_passage) {
       print("Personality Insights")
-      library(RCurl) # install.packages("RCurl") # if the package is not already installed
-      library(httr)
-
       ##text_passage <- URLencode(text_passage) ## NO NO NO - no URL encode here  (need to resarch why )
       pi_url="https://gateway.watsonplatform.net/personality-insights/api/v2/profile"
 
-      data <- POST(url=pi_url,
+      data <- httr::POST(url=pi_url,
            authenticate(username_PI,password_PI),
            add_headers("Content-Type"="text/plain","charset"="utf-8"),
            body = text_passage)
@@ -29,7 +26,7 @@ watson.pi.analyze <- function(text_passage) {
       data <- data[!grepl('name:',data$X5),]
       data <- data[!grepl('children:',data$X5),]
       data <- data[,-c(2,6), ] # remove columns we dont need - duplicates or dont care for SAMPLING ERROR (now) but mght later
-      setnames(data,c("trait","category","percentage","error"))
+      data.table::setnames(data,c("trait","category","percentage","error"))
       data$percentage <- gsub("percentage:","",data$percentage)
       data$category <- gsub("category:","",data$category)
       data$error <- gsub("sampling_error:","",data$error)
