@@ -6,9 +6,8 @@
 #'  @export
 
 watson.alchemy.test <- function() {
-  library(httr)
   print("Short Test of Alchemy - Hitting Endpoint; Checking Credentials OK and Transactions Consumed ")
-  GET(url=paste("http://gateway-a.watsonplatform.net/calls/info/GetAPIKeyInfo?apikey=",username_password_ALCH,"&outputMode=json",sep=""))
+  httr::GET(url=paste("http://gateway-a.watsonplatform.net/calls/info/GetAPIKeyInfo?apikey=",username_password_ALCH,"&outputMode=json",sep=""))
  }
 
 
@@ -20,7 +19,6 @@ watson.alchemy.test <- function() {
 #'  @export
 
 watson.alchemy.combined <- function(utterance) {
-  library(httr)
   print("Alchemy combined call- running multiple Alchemy Language calls")
 
   alchemy_url <- "http://gateway-a.watsonplatform.net/calls/text/"
@@ -30,9 +28,9 @@ watson.alchemy.combined <- function(utterance) {
 
   query <- paste(alchemy_url,api_feature,"?extract=keyword,entity,taxonomy,concept,doc-sentiment,doc-emotion&apikey=",username_password_ALCH,"&text=",utterance,"&outputMode=",output_mode, sep="")
   query
-  response <- POST(query)
+  response <- httr::POST(query)
   print(response)
-  return(content(response))
+  return(httr::content(response))
 }
 
 

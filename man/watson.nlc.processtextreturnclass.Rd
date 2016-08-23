@@ -5,15 +5,8 @@
 \title{WatsonR - Natural Language Classifier (NLC) - PROCESS TEXT}
 \usage{
 watson.nlc.processtextreturnclass(classifier_id, query_text)
-
-watson.nlc.processtextreturnclass(classifier_id, query_text)
 }
 \description{
-NLC4
- @param  Text to Pass to Classifier
- @return Classifiers, with confidence
- @export
-
 NLC6
  @param  Text to Process
  @return Classes and % Confidence
