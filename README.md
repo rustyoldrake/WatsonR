@@ -1,5 +1,6 @@
 # WatsonR
 A package for R to engage Watson Developer Cloud Services  
+Demo Video - https://www.youtube.com/watch?v=leKCMu9TrEI
 
 # Status - Aug 23rd
     STATUS: STILL IN DEVELOPMENT - CAN PULL CODE - MUCH WILL WORK - BUT NOT INSTALLING CLEAN AS OF AUG 23
