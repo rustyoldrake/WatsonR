@@ -11,8 +11,8 @@ watson.pi.analyze <- function(text_passage) {
       pi_url="https://gateway.watsonplatform.net/personality-insights/api/v2/profile"
 
       data <- httr::POST(url=pi_url,
-           authenticate(username_PI,password_PI),
-           add_headers("Content-Type"="text/plain","charset"="utf-8"),
+           httr::authenticate(username_PI,password_PI),
+           httr::add_headers("Content-Type"="text/plain","charset"="utf-8"),
            body = text_passage)
       ##data
       ##return(response)

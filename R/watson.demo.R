@@ -35,7 +35,7 @@ watson.demo <- function() {
   NLC_name <- paste("sorting_hat_",sample(1:1000,1),sep="")
   watson.nlc.createnewclassifier("data/nlc_sortinghat.csv",NLC_name)
   watson.nlc.listallclassifiers()
-  watson.nlc.checkclassifierstatus("33fffex86-nlc-1350") #
+  watson.nlc.checkclassifierstatus("7ace87x92-nlc-1514") #
   watson.nlc.processtextreturnclass("33fffex86-nlc-1350","nasty jerk who screams at kids")
   watson.nlc.deleteclassifier("33fffex86-nlc-1350")
 
