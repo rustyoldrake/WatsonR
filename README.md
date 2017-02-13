@@ -2,6 +2,16 @@
 A package for R to engage Watson Developer Cloud Services  
 Demo Video - https://www.youtube.com/watch?v=leKCMu9TrEI
 
+# Status - Feb 12, 2017
+    Joe and Ryan had a short talk to synch up. (thanks Joe!)
+    TO DO BEFORE GOOD ENOUGH FOR CRAN  (Soft target March 2017)
+    1) Still working on better authentication
+    2) 4 Warnings and 3 notes when building - so need to get rid of those
+    
+    Some Tidy up Merged on Feb 12. 
+    
+    
+    
 # Status - Aug 23rd
     STATUS: STILL IN DEVELOPMENT - CAN PULL CODE - MUCH WILL WORK - BUT NOT INSTALLING CLEAN AS OF AUG 23
     DONE:   Alchemy, Tone, Personality Insights, Speech to Text, and Text to Speech (basics);
