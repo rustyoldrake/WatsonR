@@ -1,14 +1,15 @@
 #' WatsonR - Alchemy Language Test
 #'
 #' Alchemy Language Functions - Light Test
-#' @param NONE
+#' @param credential file (a file in JSON format)
 #' @return NOTHING - just prints the response (hopefully 200 & API response) on screen
 #' @export
 
-watson.alchemy.test <- function() {
+watson.alchemy.test <- function(creds) {
   print("Short Test of Alchemy - Hitting Endpoint; Checking Credentials OK and Transactions Consumed ")
-  httr::GET(url=paste("http://gateway-a.watsonplatform.net/calls/info/GetAPIKeyInfo?apikey=",username_password_ALCH,"&outputMode=json",sep=""))
- }
+  # httr::GET(url=paste("http://gateway-a.watsonplatform.net/calls/info/GetAPIKeyInfo?apikey=",username_password_ALCH,"&outputMode=json",sep=""))
+  httr::GET(url=paste("http://gateway-a.watsonplatform.net/calls/info/GetAPIKeyInfo?apikey=",fromJSON(creds)$apikey,"&outputMode=json",sep=""))
+}
 
 
 #' WatsonR - Alchemy Language COMBINED Calles
