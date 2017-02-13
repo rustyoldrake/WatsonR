@@ -8,7 +8,7 @@
 watson.alchemy.test <- function(creds) {
   print("Short Test of Alchemy - Hitting Endpoint; Checking Credentials OK and Transactions Consumed ")
   # httr::GET(url=paste("http://gateway-a.watsonplatform.net/calls/info/GetAPIKeyInfo?apikey=",username_password_ALCH,"&outputMode=json",sep=""))
-  httr::GET(url=paste("http://gateway-a.watsonplatform.net/calls/info/GetAPIKeyInfo?apikey=",fromJSON(creds)$apikey,"&outputMode=json",sep=""))
+  httr::GET(url=paste("http://gateway-a.watsonplatform.net/calls/info/GetAPIKeyInfo?apikey=",fromJSON(,creds)$apikey,"&outputMode=json",sep=""))
 }
 
 
