@@ -3,9 +3,9 @@
 #' This Function will Load your API keys from KEYS.R file if it is in working directory
 #' You can create / edit this file yourself
 #'
-#'  @param NONE
-#'  @return NOTHING
-#'  @export
+#' @param NONE
+#' @return NOTHING
+#' @export
 
 watson.keys.load <- function() {
   library(RCurl) # install.packages("RCurl") # if the package is not already installed
@@ -32,10 +32,10 @@ watson.keys.load <- function() {
 
 #' WatsonR - Display API Key Info
 #'
-#'  Displays API Keys - Empty Slots and Full Slots
-#'  @param NONE
-#'  @return NOTHING
-#'  @export
+#' Displays API Keys - Empty Slots and Full Slots
+#' @param NONE
+#' @return NOTHING
+#' @export
 
 watson.keys.display <- function() {
       print("This Function Displays your Existing API Keys for the IBM Watson Services")
@@ -52,12 +52,12 @@ watson.keys.display <- function() {
 
 #' WatsonR - Enter API Keys Info Manually
 #'
-#'  Prompts User to Enter in Keys.
-#'  KEYS.R FILE load with watson.keys.load is alternate method
+#' Prompts User to Enter in Keys.
+#' KEYS.R FILE load with watson.keys.load is alternate method
 #'
-#'  @param NONE
-#'  @return NOTHING
-#'  @export
+#' @param NONE
+#' @return NOTHING
+#' @export
 
 watson.keys.enter <- function() {
   print("This Funtcion Helps you enter API Keys Manually for the IBM Watson Services")

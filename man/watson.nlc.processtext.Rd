@@ -6,10 +6,12 @@
 \usage{
 watson.nlc.processtext(classifier_id, query_text)
 }
+\arguments{
+\item{Text}{to Pass to Classifier}
+}
+\value{
+Classifiers, with confidence
+}
 \description{
 NLC4
- @param  Text to Pass to Classifier
- @return Classifiers, with confidence
- @export
 }
-

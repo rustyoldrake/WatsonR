@@ -6,10 +6,9 @@
 \usage{
 watson.tone.analyze(utterance)
 }
+\value{
+NOTHING
+}
 \description{
 Tone Analysis receives an utterance and returns
- @param NONE
- @return NOTHING
- @export
 }
-

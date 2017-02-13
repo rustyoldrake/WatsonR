@@ -6,10 +6,12 @@
 \usage{
 watson.tone.demo()
 }
+\arguments{
+\item{Demo}{String}
+}
+\value{
+NOTHING
+}
 \description{
 Tone Analysis Demo
- @param Demo String
- @return NOTHING
- @export
 }
-

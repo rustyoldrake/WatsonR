@@ -11,4 +11,4 @@ Imports: httr, RCurl, XML, plyr, stringr, splitstackshape, data.table, audio, cu
 Note: Experimental package WatsonR is my own, not my employer's, and presented without warranty.  It may contain errors so use at your own risk :) - Also, this is my first crack at building a package - so I've probably made a few errors.
 License: MIT
 LazyData: TRUE
-RoxygenNote: 5.0.1
+RoxygenNote: 5.0.1.9000

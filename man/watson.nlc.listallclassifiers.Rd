@@ -6,10 +6,12 @@
 \usage{
 watson.nlc.listallclassifiers()
 }
+\arguments{
+\item{NOTHING}{}
+}
+\value{
+LIST OF CLASSIFIERS
+}
 \description{
 NLC2
- @param  NOTHING
- @return LIST OF CLASSIFIERS
- @export
 }
-

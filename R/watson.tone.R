@@ -1,9 +1,9 @@
 #' WatsonR - Tone Analyzer
 #'
-#'  Tone Analysis receives an utterance and returns
-#'  @param NONE
-#'  @return NOTHING
-#'  @export
+#' Tone Analysis receives an utterance and returns
+#' @param NONE
+#' @return NOTHING
+#' @export
 
 watson.tone.analyze <- function(utterance) {
 
@@ -40,10 +40,10 @@ watson.tone.analyze <- function(utterance) {
 
 #' WatsonR - Tone Analyzer - Demo
 #'
-#'  Tone Analysis Demo
-#'  @param Demo String
-#'  @return NOTHING
-#'  @export
+#' Tone Analysis Demo
+#' @param Demo String
+#' @return NOTHING
+#' @export
 
 watson.tone.demo <- function() {
   print("EXAMPLE: Angry and Confident person:")
