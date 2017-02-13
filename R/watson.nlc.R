@@ -1,9 +1,9 @@
 #' WatsonR - Natural Language Classifier (NLC) - CREATE
 #'
 #' NLC1
-#'  @param CSV File of Ground Truth to Train;  Name of the New Classifier
-#'  @return NOTHING
-#'  @export
+#' @param CSV File of Ground Truth to Train;  Name of the New Classifier
+#' @return NOTHING
+#' @export
 
 ####### NLC FUNCTION CREATE NEW CLASSIFIER - post /v1/classifiers - Creates a classifier with CSV data ## URL below no "/" after base url
 watson.nlc.createnewclassifier <- function(file,classifiername) {
@@ -19,9 +19,9 @@ watson.nlc.createnewclassifier <- function(file,classifiername) {
 #' WatsonR - Natural Language Classifier (NLC) - LIST
 #'
 #' NLC2
-#'  @param  NOTHING
-#'  @return LIST OF CLASSIFIERS
-#'  @export
+#' @param  NOTHING
+#' @return LIST OF CLASSIFIERS
+#' @export
 
 ###### NLC FUNCTION: LIST ALL CLASSIFIERS AND RETURN NEAT LIST
 watson.nlc.listallclassifiers <- function(){
@@ -52,9 +52,9 @@ watson.nlc.listallclassifiers <- function(){
 #' WatsonR - Natural Language Classifier (NLC) - STATUS Check
 #'
 #' NLC3
-#'  @param  Classifier ID
-#'  @return Classifier Status
-#'  @export
+#' @param  Classifier ID
+#' @return Classifier Status
+#' @export
 
 ###### NLC FUNCTION - CHECK CLASSIFIER STATUS
 watson.nlc.checkclassifierstatus <- function(classifier_id) {
@@ -71,10 +71,10 @@ watson.nlc.checkclassifierstatus <- function(classifier_id) {
 
 #' WatsonR - Natural Language Classifier (NLC) - PROCESS TEXT
 #'
-#'  NLC4
-#'  @param  Text to Pass to Classifier
-#'  @return Classifiers, with confidence
-#'  @export
+#' NLC4
+#' @param  Text to Pass to Classifier
+#' @return Classifiers, with confidence
+#' @export
 
 ###### NLC FUNCTION: ACCEPT QUERY & RETURN RESULT: CLASSIFIER and % FROM TEXT INPUT AND PROCESS TO LOOK GOOD
 watson.nlc.processtext <- function(classifier_id,query_text){
@@ -101,10 +101,10 @@ watson.nlc.processtext <- function(classifier_id,query_text){
 
 #' WatsonR - Natural Language Classifier (NLC) - DELETE Classifier
 #'
-#'  NLC5
-#'  @param  Classifier ID
-#'  @return Message that you've killed the classifier (but not the service)
-#'  @export
+#' NLC5
+#' @param  Classifier ID
+#' @return Message that you've killed the classifier (but not the service)
+#' @export
 ###### NLC FUNCTION - DELETE CLASSIFIER - Receives name of Classifier to Kill; May not be able to do this until training complete
 watson.nlc.deleteclassifier <- function(kill_classifier) {
   base_url_nlc = "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/"

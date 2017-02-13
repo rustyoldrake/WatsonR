@@ -1,9 +1,9 @@
 #' WatsonR - Speech to Text (STT) PROCESS - receives WAV File
 #'
-#'  Speech to Text
-#'  @param Receives WAV File - rather a pointer to where FILE.WAV is
-#'  @return Transcript (Vanilla) of WAV file; omits all other data
-#'  @export
+#' Speech to Text
+#' @param Receives WAV File - rather a pointer to where FILE.WAV is
+#' @return Transcript (Vanilla) of WAV file; omits all other data
+#' @export
 
 watson.stt.process <- function(filename) {
   print("Speech to text - processing WAV file that is passd to us ")
@@ -30,10 +30,10 @@ watson.stt.process <- function(filename) {
 
 #' WatsonR - Speech to Text (STT) TEST - WAV to Transcript
 #'
-#'  Speech to Text
-#'  @param NONE - WAV file test is part of package
-#'  @return Transcript (Vanilla) of WAV file; omits all other data
-#'  @export
+#' Speech to Text
+#' @param NONE - WAV file test is part of package
+#' @return Transcript (Vanilla) of WAV file; omits all other data
+#' @export
 
 watson.stt.test <- function() {
   print("Speech to text Test using the speech_test.WAV Test file in the ")

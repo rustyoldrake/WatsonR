@@ -6,10 +6,12 @@
 \usage{
 watson.nlc.deleteclassifier(kill_classifier)
 }
+\arguments{
+\item{Classifier}{ID}
+}
+\value{
+Message that you've killed the classifier (but not the service)
+}
 \description{
 NLC5
- @param  Classifier ID
- @return Message that you've killed the classifier (but not the service)
- @export
 }
-

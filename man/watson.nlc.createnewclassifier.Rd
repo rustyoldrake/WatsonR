@@ -6,10 +6,12 @@
 \usage{
 watson.nlc.createnewclassifier(file, classifiername)
 }
+\arguments{
+\item{CSV}{File of Ground Truth to Train;  Name of the New Classifier}
+}
+\value{
+NOTHING
+}
 \description{
 NLC1
- @param CSV File of Ground Truth to Train;  Name of the New Classifier
- @return NOTHING
- @export
 }
-

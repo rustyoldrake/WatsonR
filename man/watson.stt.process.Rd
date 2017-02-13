@@ -6,10 +6,12 @@
 \usage{
 watson.stt.process(filename)
 }
+\arguments{
+\item{Receives}{WAV File - rather a pointer to where FILE.WAV is}
+}
+\value{
+Transcript (Vanilla) of WAV file; omits all other data
+}
 \description{
 Speech to Text
- @param Receives WAV File - rather a pointer to where FILE.WAV is
- @return Transcript (Vanilla) of WAV file; omits all other data
- @export
 }
-

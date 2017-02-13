@@ -6,10 +6,12 @@
 \usage{
 watson.stt.test()
 }
+\arguments{
+\item{NONE}{- WAV file test is part of package}
+}
+\value{
+Transcript (Vanilla) of WAV file; omits all other data
+}
 \description{
 Speech to Text
- @param NONE - WAV file test is part of package
- @return Transcript (Vanilla) of WAV file; omits all other data
- @export
 }
-

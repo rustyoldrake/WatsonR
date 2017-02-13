@@ -6,13 +6,10 @@
 \usage{
 watson.keys.enter()
 }
+\value{
+NOTHING
+}
 \description{
 Prompts User to Enter in Keys.
- KEYS.R FILE load with watson.keys.load is alternate method
+KEYS.R FILE load with watson.keys.load is alternate method
 }
-\details{
-@param NONE
- @return NOTHING
- @export
-}
-

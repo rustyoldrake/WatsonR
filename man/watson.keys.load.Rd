@@ -6,13 +6,10 @@
 \usage{
 watson.keys.load()
 }
+\value{
+NOTHING
+}
 \description{
 This Function will Load your API keys from KEYS.R file if it is in working directory
 You can create / edit this file yourself
 }
-\details{
-@param NONE
- @return NOTHING
- @export
-}
-

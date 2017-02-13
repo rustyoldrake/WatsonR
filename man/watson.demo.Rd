@@ -6,10 +6,9 @@
 \usage{
 watson.demo()
 }
+\value{
+NOTHING
+}
 \description{
 Demonstrates WatsonR - Multiple APIs.  Note NLC Natural Language Classifier takes time to complete training
- @param NONE
- @return NOTHING
- @export
 }
-

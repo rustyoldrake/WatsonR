@@ -6,10 +6,12 @@
 \usage{
 watson.pi.demo()
 }
+\arguments{
+\item{Pulls}{Ronald Reagan speech that is included in the library}
+}
+\value{
+52 Psychometric traits - big 5, needs, values, personalit
+}
 \description{
 Personality Insights - Demo using a Ronald Reagan Speech #
- @param Pulls Ronald Reagan speech that is included in the library
- @return 52 Psychometric traits - big 5, needs, values, personalit
- @export
 }
-

@@ -6,10 +6,9 @@
 \usage{
 watson.keys.display()
 }
+\value{
+NOTHING
+}
 \description{
 Displays API Keys - Empty Slots and Full Slots
- @param NONE
- @return NOTHING
- @export
 }
-

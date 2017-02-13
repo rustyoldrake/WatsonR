@@ -1,9 +1,9 @@
 #' WatsonR - Personality Insights (PI) - Analyze
 #'
-#'  Personality Insights
-#'  @param Long text passage to analyze - has to be more than 100 words, better if more than 2500
-#'  @return 52 Psychometric traits - big 5, needs, values, personalit
-#'  @export
+#' Personality Insights
+#' @param Long text passage to analyze - has to be more than 100 words, better if more than 2500
+#' @return 52 Psychometric traits - big 5, needs, values, personalit
+#' @export
 
 watson.pi.analyze <- function(text_passage) {
       print("Personality Insights")
@@ -41,10 +41,10 @@ watson.pi.analyze <- function(text_passage) {
 
 #' WatsonR - Personality Insights (PI) - DEMO
 #'
-#'  Personality Insights - Demo using a Ronald Reagan Speech #
-#'  @param Pulls Ronald Reagan speech that is included in the library
-#'  @return 52 Psychometric traits - big 5, needs, values, personalit
-#'  @export
+#' Personality Insights - Demo using a Ronald Reagan Speech #
+#' @param Pulls Ronald Reagan speech that is included in the library
+#' @return 52 Psychometric traits - big 5, needs, values, personalit
+#' @export
 
 watson.pi.demo <- function() {
   print("Loading Text for Ronald Reagan Speech 1986 - Space Shuttle Challenger")

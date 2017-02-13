@@ -6,10 +6,12 @@
 \usage{
 watson.nlc.checkclassifierstatus(classifier_id)
 }
+\arguments{
+\item{Classifier}{ID}
+}
+\value{
+Classifier Status
+}
 \description{
 NLC3
- @param  Classifier ID
- @return Classifier Status
- @export
 }
-

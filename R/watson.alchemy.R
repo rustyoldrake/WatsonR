@@ -1,9 +1,9 @@
 #' WatsonR - Alchemy Language Test
 #'
-#'  Alchemy Language Functions - Light Test
-#'  @param NONE
-#'  @return NOTHING - just prints the response (hopefully 200 & API response) on screen
-#'  @export
+#' Alchemy Language Functions - Light Test
+#' @param NONE
+#' @return NOTHING - just prints the response (hopefully 200 & API response) on screen
+#' @export
 
 watson.alchemy.test <- function() {
   print("Short Test of Alchemy - Hitting Endpoint; Checking Credentials OK and Transactions Consumed ")
@@ -13,10 +13,10 @@ watson.alchemy.test <- function() {
 
 #' WatsonR - Alchemy Language COMBINED Calles
 #'
-#'  Alchemy Language Functions -- Receives text and returns MULTPLE Features like keyword, entity, sentiment, tone
-#'  @param String to be Analyzed by Alchemy's combined call
-#'  @return JSON formatted like this http://www.alchemyapi.com/api/combined/textc.html
-#'  @export
+#' Alchemy Language Functions -- Receives text and returns MULTPLE Features like keyword, entity, sentiment, tone
+#' @param String to be Analyzed by Alchemy's combined call
+#' @return JSON formatted like this http://www.alchemyapi.com/api/combined/textc.html
+#' @export
 
 watson.alchemy.combined <- function(utterance) {
   print("Alchemy combined call- running multiple Alchemy Language calls")

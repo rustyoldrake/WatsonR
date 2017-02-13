@@ -6,10 +6,12 @@
 \usage{
 watson.pi.analyze(text_passage)
 }
+\arguments{
+\item{Long}{text passage to analyze - has to be more than 100 words, better if more than 2500}
+}
+\value{
+52 Psychometric traits - big 5, needs, values, personalit
+}
 \description{
 Personality Insights
- @param Long text passage to analyze - has to be more than 100 words, better if more than 2500
- @return 52 Psychometric traits - big 5, needs, values, personalit
- @export
 }
-
