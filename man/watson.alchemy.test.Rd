@@ -7,7 +7,7 @@
 watson.alchemy.test(creds)
 }
 \arguments{
-\item{credential}{file (a file in JSON format)}
+\item{creds}{file name (a file in JSON format)}
 }
 \value{
 NOTHING - just prints the response (hopefully 200 & API response) on screen

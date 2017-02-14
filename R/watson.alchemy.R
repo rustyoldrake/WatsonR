@@ -1,7 +1,7 @@
 #' WatsonR - Alchemy Language Test
 #'
 #' Alchemy Language Functions - Light Test
-#' @param credential file (a file in JSON format)
+#' @param creds file name (a file in JSON format)
 #' @return NOTHING - just prints the response (hopefully 200 & API response) on screen
 #' @export
 
