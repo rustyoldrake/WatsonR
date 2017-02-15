@@ -4,6 +4,7 @@
 #' @param creds file name (a file in JSON format)
 #' @return NOTHING - just prints the response (hopefully 200 & API response) on screen
 #' @export
+library("rjson")
 
 watson.alchemy.test <- function(creds) {
   print("Short Test of Alchemy - Hitting Endpoint; Checking Credentials OK and Transactions Consumed ")
@@ -20,7 +21,7 @@ watson.alchemy.test <- function(creds) {
 #' @return JSON formatted like this http://www.alchemyapi.com/api/combined/textc.html
 #' @export
 
-watson.alchemy.combined <- function(utterance) {
+watson.alchemy.combined <- function(creds, utterance) {
   print("Alchemy combined call- running multiple Alchemy Language calls")
 
   alchemy_url <- "http://gateway-a.watsonplatform.net/calls/text/"
@@ -28,7 +29,8 @@ watson.alchemy.combined <- function(utterance) {
   output_mode <- "json"
   utterance <- URLencode(utterance) #in case we have spaces, we need %20
 
-  query <- paste(alchemy_url,api_feature,"?extract=keyword,entity,taxonomy,concept,doc-sentiment,doc-emotion&apikey=",username_password_ALCH,"&text=",utterance,"&outputMode=",output_mode, sep="")
+  apikey <- fromJSON(, creds)$apikey
+  query <- paste(alchemy_url,api_feature,"?extract=keyword,entity,taxonomy,concept,doc-sentiment,doc-emotion&apikey=",apikey,"&text=",utterance,"&outputMode=",output_mode, sep="")
   query
   response <- httr::POST(query)
   print(response)

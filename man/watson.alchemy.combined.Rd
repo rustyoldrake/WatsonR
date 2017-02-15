@@ -4,7 +4,7 @@
 \alias{watson.alchemy.combined}
 \title{WatsonR - Alchemy Language COMBINED Calles}
 \usage{
-watson.alchemy.combined(utterance)
+watson.alchemy.combined(creds, utterance)
 }
 \arguments{
 \item{String}{to be Analyzed by Alchemy's combined call}
