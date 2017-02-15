@@ -1,10 +1,10 @@
 #' WatsonR - Alchemy Language Test
 #'
 #' Alchemy Language Functions - Light Test
-#' @param creds file name (a file in JSON format)
+#' @param creds json file containing the alchemy api key to use for this call
 #' @return NOTHING - just prints the response (hopefully 200 & API response) on screen
 #' @export
-library("rjson")
+
 
 watson.alchemy.test <- function(creds) {
   print("Short Test of Alchemy - Hitting Endpoint; Checking Credentials OK and Transactions Consumed ")
@@ -17,7 +17,8 @@ watson.alchemy.test <- function(creds) {
 #' WatsonR - Alchemy Language COMBINED Calles
 #'
 #' Alchemy Language Functions -- Receives text and returns MULTPLE Features like keyword, entity, sentiment, tone
-#' @param String to be Analyzed by Alchemy's combined call
+#' @param utterance String to be Analyzed by Alchemy's combined call
+#' @param creds json file containing the alchemy api key to use for this call
 #' @return JSON formatted like this http://www.alchemyapi.com/api/combined/textc.html
 #' @export
 
