@@ -4,10 +4,10 @@
 \alias{watson.nlc.listallclassifiers}
 \title{WatsonR - Natural Language Classifier (NLC) - LIST}
 \usage{
-watson.nlc.listallclassifiers()
+watson.nlc.listallclassifiers(creds)
 }
 \arguments{
-\item{NOTHING}{}
+\item{creds}{the name of the credentials file in json format}
 }
 \value{
 LIST OF CLASSIFIERS

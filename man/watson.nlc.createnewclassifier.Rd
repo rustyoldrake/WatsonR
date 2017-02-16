@@ -4,10 +4,14 @@
 \alias{watson.nlc.createnewclassifier}
 \title{WatsonR - Natural Language Classifier (NLC) - CREATE}
 \usage{
-watson.nlc.createnewclassifier(file, classifiername)
+watson.nlc.createnewclassifier(creds, csvfile, classifiername)
 }
 \arguments{
-\item{CSV}{File of Ground Truth to Train;  Name of the New Classifier}
+\item{creds}{the name of the credentials file in json format}
+
+\item{csvfile}{File of Ground Truth to Train;  Name of the New Classifier}
+
+\item{classifiername}{The name to assign to the new classifier}
 }
 \value{
 NOTHING

@@ -1,15 +1,18 @@
 #' WatsonR - Natural Language Classifier (NLC) - CREATE
 #'
 #' NLC1
-#' @param CSV File of Ground Truth to Train;  Name of the New Classifier
+#' @param creds the name of the credentials file in json format
+#' @param csvfile File of Ground Truth to Train;  Name of the New Classifier
+#' @param classifiername The name to assign to the new classifier
 #' @return NOTHING
 #' @export
 
 ####### NLC FUNCTION CREATE NEW CLASSIFIER - post /v1/classifiers - Creates a classifier with CSV data ## URL below no "/" after base url
-watson.nlc.createnewclassifier <- function(file,classifiername) {
-  library(httr)
+watson.nlc.createnewclassifier <- function(creds, csvfile,classifiername) {
+#  library(httr)
+  credentials = rjson::fromJSON(,creds)
   return(httr::POST(url="https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers",
-              authenticate(username_NLC,password_NLC),
+              authenticate(credentials$username,credentials$password),
               body = list(training_data = upload_file(file),
                           training_metadata = paste("{\"language\":\"en\",\"name\":\"",classifiername,"\"}",sep=""))
               )
@@ -19,16 +22,17 @@ watson.nlc.createnewclassifier <- function(file,classifiername) {
 #' WatsonR - Natural Language Classifier (NLC) - LIST
 #'
 #' NLC2
-#' @param  NOTHING
+#' @param creds the name of the credentials file in json format
 #' @return LIST OF CLASSIFIERS
 #' @export
 
 ###### NLC FUNCTION: LIST ALL CLASSIFIERS AND RETURN NEAT LIST
-watson.nlc.listallclassifiers <- function(){
+watson.nlc.listallclassifiers <- function(creds){
   #library(data.table)
   #library(splitstackshape)
+  credentials = rjson::fromJSON(,creds)
   base_url_nlc = "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/"
-  data <- RCurl::getURL(base_url_nlc,userpwd = username_password_NLC )
+  data <- RCurl::getURL(base_url_nlc,userpwd = credentials$username_password_NLC )
   data <- as.data.frame(strsplit(as.character(data),"classifier_id"))
   data <- data[-c(1), ] # remove dud first row
   data <- data.frame(matrix(data))
