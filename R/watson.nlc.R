@@ -11,7 +11,7 @@
 watson.nlc.createnewclassifier <- function(creds, csvfile,classifiername) {
 #  library(httr)
   credentials = rjson::fromJSON(,creds)
-  return(httr::POST(url="https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers",
+  return(httr::POST(url="http://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers",
               authenticate(credentials$username,credentials$password),
               body = list(training_data = upload_file(file),
                           training_metadata = paste("{\"language\":\"en\",\"name\":\"",classifiername,"\"}",sep=""))
