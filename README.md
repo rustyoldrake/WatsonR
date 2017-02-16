@@ -2,6 +2,9 @@
 A package for R to engage Watson Developer Cloud Services  
 Demo Video - https://www.youtube.com/watch?v=leKCMu9TrEI
 
+# Status - Feb 15, 2017
+	added new credentials method for alchemy only.  This new method is described under 'Secrets Management' below.  Soon all the API will be calllable using this method.
+
 # Status - Feb 12, 2017
     Joe and Ryan had a short talk to synch up. (thanks Joe!)
     TO DO BEFORE GOOD ENOUGH FOR CRAN  (Soft target March 2017)
@@ -22,6 +25,19 @@ Demo Video - https://www.youtube.com/watch?v=leKCMu9TrEI
 # Objective
 To create a WatsonR package that is available for the R Programming language that can be used by R programmers to access IBM Watson Developer Cloud (WDC) Services.  
 https://www.ibm.com/watson/developercloud/services-catalog.html
+
+# Secret Management
+(JD Feb 15 2017) I am moving WatsonR away from using the watson.keys method described below.  The prefered method will be to create a folder in your R project to hold files for your secrets.  Each file should contain the json document from bluemix that contains your credentials for the service you want.
+
+For example, To use the alchemy API, you first need to create an alchemy instance on bluemix.  Next go to the credentials tab and copy the full json document containing your credentials.
+
+Next, in RStudio or your favorite text editor, open a text file and paste the json into the file.  save the file with a '.json' extension.  
+
+When you call the api, one of the parameters of the call is the name of the credentials file to use to access the service.  For example, to call the combined alchemy api, follow the steps above to create a credentials file and then call the method as follows:
+
+	WatsonR::watson.alchemy.combined("Credentials/alchemy1.json", "I shot an elephant in my pajamas")
+
+watson.keys doesn't work correctly in the package setting so we will be deprecating that method.
 
 # watson.keys 
 enter in keys / authenticate
