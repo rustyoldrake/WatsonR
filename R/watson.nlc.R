@@ -31,6 +31,7 @@ watson.nlc.listallclassifiers <- function(creds){
   #library(data.table)
   #library(splitstackshape)
   credentials = rjson::fromJSON(,creds)
+  username_password = paste(credentials$username,credentials$password,sep=":")
   base_url_nlc = "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/"
   data <- RCurl::getURL(base_url_nlc,userpwd = credentials$username_password_NLC )
   data <- as.data.frame(strsplit(as.character(data),"classifier_id"))
