@@ -76,14 +76,13 @@ watson.nlc.processtext <- function(creds, classifier_id, query_text){
 ### end of function
 
 #' WatsonR - Natural Language Classifier (NLC) - DELETE Classifier
-#'  Receives name of Classifier to Kill; May not be able to do this until training complete
+#'  Receives name of Classifier to delete; May not be able to do this until training complete
 #'
 #' NLC5
 #' @param creds the name of the credentials file in json format
 #' @param  kill_classifier Classifier ID
 #' @return Message that you've killed the classifier (but not the service)
 #' @export
-###### NLC FUNCTION - DELETE CLASSIFIER -
 watson.nlc.deleteclassifier <- function(creds, kill_classifier) {
   credentials = rjson::fromJSON(,creds)
   base_url_nlc = "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/"

@@ -3,7 +3,7 @@
 \name{watson.nlc.deleteclassifier}
 \alias{watson.nlc.deleteclassifier}
 \title{WatsonR - Natural Language Classifier (NLC) - DELETE Classifier
- Receives name of Classifier to Kill; May not be able to do this until training complete}
+ Receives name of Classifier to delete; May not be able to do this until training complete}
 \usage{
 watson.nlc.deleteclassifier(creds, kill_classifier)
 }

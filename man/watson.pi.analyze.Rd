@@ -4,10 +4,12 @@
 \alias{watson.pi.analyze}
 \title{WatsonR - Personality Insights (PI) - Analyze}
 \usage{
-watson.pi.analyze(text_passage)
+watson.pi.analyze(creds, text_passage)
 }
 \arguments{
-\item{Long}{text passage to analyze - has to be more than 100 words, better if more than 2500}
+\item{creds}{the name of the credentials file in json format}
+
+\item{text_passage}{Long text passage to analyze - has to be more than 100 words, better if more than 2500}
 }
 \value{
 52 Psychometric traits - big 5, needs, values, personalit

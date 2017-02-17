@@ -7,6 +7,8 @@
 watson.pi.demo()
 }
 \arguments{
+\item{creds}{the name of the credentials file in json format}
+
 \item{Pulls}{Ronald Reagan speech that is included in the library}
 }
 \value{
