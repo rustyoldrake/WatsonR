@@ -2,7 +2,9 @@
 % Please edit documentation in R/watson.nlc.R
 \name{watson.nlc.createnewclassifier}
 \alias{watson.nlc.createnewclassifier}
-\title{WatsonR - Natural Language Classifier (NLC) - CREATE}
+\title{WatsonR - Natural Language Classifier (NLC) - CREATE
+CREATE NEW CLASSIFIER - post /v1/classifiers -
+Creates a classifier with CSV data ## URL below no "/" after base url}
 \usage{
 watson.nlc.createnewclassifier(creds, csvfile, classifiername)
 }

@@ -2,16 +2,22 @@
 % Please edit documentation in R/watson.nlc.R
 \name{watson.nlc.processtext}
 \alias{watson.nlc.processtext}
-\title{WatsonR - Natural Language Classifier (NLC) - PROCESS TEXT}
+\title{WatsonR - Natural Language Classifier (NLC) - PROCESS TEXT
+ACCEPT QUERY & RETURN RESULT: classifier and confidence score from text input}
 \usage{
-watson.nlc.processtext(classifier_id, query_text)
+watson.nlc.processtext(creds, classifier_id, query_text)
 }
 \arguments{
-\item{Text}{to Pass to Classifier}
+\item{creds}{the name of the credentials file in json format}
+
+\item{classifier_id}{the classifier identification uuid}
+
+\item{query_text}{to Pass to Classifier}
 }
 \value{
 Classifiers, with confidence
 }
 \description{
-NLC4
+WatsonR - Natural Language Classifier (NLC) - PROCESS TEXT
+ACCEPT QUERY & RETURN RESULT: classifier and confidence score from text input
 }

@@ -2,7 +2,9 @@
 % Please edit documentation in R/watson.nlc.R
 \name{watson.nlc.listallclassifiers}
 \alias{watson.nlc.listallclassifiers}
-\title{WatsonR - Natural Language Classifier (NLC) - LIST}
+\title{WatsonR - Natural Language Classifier (NLC) - LIST
+LIST ALL CLASSIFIERS AND RETURN NEAT LIST
+NLC2}
 \usage{
 watson.nlc.listallclassifiers(creds)
 }
@@ -13,5 +15,7 @@ watson.nlc.listallclassifiers(creds)
 LIST OF CLASSIFIERS
 }
 \description{
+WatsonR - Natural Language Classifier (NLC) - LIST
+LIST ALL CLASSIFIERS AND RETURN NEAT LIST
 NLC2
 }
