@@ -8,7 +8,9 @@
 watson.nlc.deleteclassifier(creds, kill_classifier)
 }
 \arguments{
-\item{Classifier}{ID}
+\item{creds}{the name of the credentials file in json format}
+
+\item{kill_classifier}{Classifier ID}
 }
 \value{
 Message that you've killed the classifier (but not the service)

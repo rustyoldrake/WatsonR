@@ -9,7 +9,7 @@ watson.nlc.checkclassifierstatus(creds, classifier_id)
 \arguments{
 \item{creds}{the name of the credentials file in json format}
 
-\item{Classifier}{ID}
+\item{classifier_id}{Classifier ID}
 }
 \value{
 Classifier Status

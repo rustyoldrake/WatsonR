@@ -16,7 +16,7 @@ watson.nlc.createnewclassifier(creds, csvfile, classifiername)
 \item{classifiername}{The name to assign to the new classifier}
 }
 \value{
-NOTHING
+initial status
 }
 \description{
 NLC1

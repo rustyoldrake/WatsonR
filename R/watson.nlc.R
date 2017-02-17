@@ -6,17 +6,17 @@
 #' @param creds the name of the credentials file in json format
 #' @param csvfile File of Ground Truth to Train;  Name of the New Classifier
 #' @param classifiername The name to assign to the new classifier
-#' @return NOTHING
+#' @return initial status
 #' @export
 #'
 watson.nlc.createnewclassifier <- function(creds, csvfile,classifiername) {
   credentials = rjson::fromJSON(,creds)
-  return(httr::POST(url="https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers",
-              authenticate(credentials$username,credentials$password),
+  data = httr::POST(url="https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers",
+              httr::authenticate(credentials$username,credentials$password),
               body = list(training_data = upload_file(csvfile),
-                          training_metadata = paste("{\"language\":\"en\",\"name\":\"",classifiername,"\"}",sep=""))
-              )
-         )}
+                          training_metadata = paste("{\"language\":\"en\",\"name\":\"",classifiername,"\"}",sep="")))
+  return(rjson::fromJSON(data))
+}
 
 
 #' WatsonR - Natural Language Classifier (NLC) - LIST
@@ -42,7 +42,7 @@ watson.nlc.listallclassifiers <- function(creds){
 #'      "The classifier instance is in its training phase,
 #'      not yet ready to accept classify requests"
 #' @param creds the name of the credentials file in json format
-#' @param  Classifier ID
+#' @param  classifier_id Classifier ID
 #' @return Classifier Status
 #' @export
 #'
@@ -51,7 +51,8 @@ watson.nlc.checkclassifierstatus <- function(creds, classifier_id) {
   username_password = paste(credentials$username,credentials$password,sep=":")
 
   base_url_nlc = "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/"
-  return(RCurl::getURL(paste(base_url_nlc,classifier_id,sep=""),userpwd = username_password))
+  data = RCurl::getURL(paste(base_url_nlc,classifier_id,sep=""),userpwd = username_password)
+  return(rjson::fromJSON(data))
 }
 
 #' WatsonR - Natural Language Classifier (NLC) - PROCESS TEXT
@@ -68,7 +69,7 @@ watson.nlc.processtext <- function(creds, classifier_id, query_text){
   username_password = paste(credentials$username,credentials$password,sep=":")
 
   base_url_nlc = "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/"
-  query_text <- URLencode(query_text)
+  query_text <- utils::URLencode(query_text)
   data <- RCurl::getURL(paste(base_url_nlc,classifier_id,"/classify","?text=", query_text,sep=""),userpwd = username_password)
   return(rjson::fromJSON(data))
 }
@@ -78,7 +79,8 @@ watson.nlc.processtext <- function(creds, classifier_id, query_text){
 #'  Receives name of Classifier to Kill; May not be able to do this until training complete
 #'
 #' NLC5
-#' @param  Classifier ID
+#' @param creds the name of the credentials file in json format
+#' @param  kill_classifier Classifier ID
 #' @return Message that you've killed the classifier (but not the service)
 #' @export
 ###### NLC FUNCTION - DELETE CLASSIFIER -
@@ -86,7 +88,7 @@ watson.nlc.deleteclassifier <- function(creds, kill_classifier) {
   credentials = rjson::fromJSON(,creds)
   base_url_nlc = "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/"
   httr::DELETE(url=paste(base_url_nlc,kill_classifier,sep=""),
-               authenticate(credentials$username, credentials$password))
+               httr::authenticate(credentials$username, credentials$password))
 }
 
 
