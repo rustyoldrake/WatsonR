@@ -4,7 +4,10 @@
 \alias{watson.alchemy.test}
 \title{WatsonR - Alchemy Language Test}
 \usage{
-watson.alchemy.test()
+watson.alchemy.test(creds)
+}
+\arguments{
+\item{creds}{json file containing the alchemy api key to use for this call}
 }
 \value{
 NOTHING - just prints the response (hopefully 200 & API response) on screen

@@ -6,7 +6,7 @@
 # NEEDS WORK #
 
 # ALCHEMY Language - AUTHENTICATION / CREDENTIALS  - Platinum
-username_password_ALCH <- "xxxxf30440aaa160dd1da4d8126c6b285"
+username_password_ALCH = "xxxxf30440aaa160dd1da4d8126c6b285"
 
 # TONE ANALYZER  - AUTHENTICATION AND CREDENTIALS - GA
 username_TON = "xxxx-7454-4721-b829-bcd051ef7d2d"

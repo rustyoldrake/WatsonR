@@ -4,10 +4,12 @@
 \alias{watson.alchemy.combined}
 \title{WatsonR - Alchemy Language COMBINED Calles}
 \usage{
-watson.alchemy.combined(utterance)
+watson.alchemy.combined(creds, utterance)
 }
 \arguments{
-\item{String}{to be Analyzed by Alchemy's combined call}
+\item{creds}{json file containing the alchemy api key to use for this call}
+
+\item{utterance}{String to be Analyzed by Alchemy's combined call}
 }
 \value{
 JSON formatted like this http://www.alchemyapi.com/api/combined/textc.html

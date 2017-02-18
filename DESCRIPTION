@@ -5,9 +5,18 @@ Version: 0.0.1.2
 Author: Ryan Anderson [aut,cre]
 Maintainer: Ryan Anderson <ryan77anderson@gmail.com>
 Description: This package permits R users to send unstructured data to IBM Watson. IBM Watson Watson Developer Cloud (WDC) services are (REST) Application Programming Interfaces (APIs)  These WDC services (API) keys are free trial but require a key via BLUEMIX for EACH service. FREE TRIAL Register: https://console.ng.bluemix.net/ IBM Bluemix is the IBM open cloud platform (PaaS) built on Cloud Foundry open source technology.
-Depends: R (>= 3.0.2)
+Depends: R (>= 3.0.2),
+        rjson
 Encoding: UTF-8
-Imports: httr, RCurl, XML, plyr, stringr, splitstackshape, data.table, audio, curl
+Imports: httr, 
+        RCurl, 
+        XML, 
+        plyr, 
+        stringr,
+        splitstackshape, 
+        data.table, 
+        audio, 
+        curl
 Note: Experimental package WatsonR is my own, not my employer's, and presented without warranty.  It may contain errors so use at your own risk :) - Also, this is my first crack at building a package - so I've probably made a few errors.
 License: MIT
 LazyData: TRUE
