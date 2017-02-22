@@ -8,7 +8,7 @@
 #' @export
 
 watson.tts.process <- function(creds,transcript,voice_number) {
-      credentials = rjson::fromJSON(,creds)
+      credentials = rjson::fromJSON(file=creds)
       voice_list <- watson.tts.listvoices()
       print("Text to Speech - Sending Transcript to TTS service....")
       url <- "https://stream.watsonplatform.net/text-to-speech/api/v1/synthesize"
@@ -42,7 +42,7 @@ watson.tts.process <- function(creds,transcript,voice_number) {
 
 watson.tts.listvoices <- function(creds)
 {
-  credentials = rjson::fromJSON(,creds)
+  credentials = rjson::fromJSON(file=creds)
   voices <- httr::GET(url=paste("https://stream.watsonplatform.net/text-to-speech/api/v1/voices"),
                       authenticate(credentials$username,credentials$password))
   data <- httr::content(voices,"text")
@@ -81,7 +81,7 @@ watson.tts.listvoices <- function(creds)
 
 watson.tts.demovoices <- function(creds)
 {
-  credentials = rjson::fromJSON(,creds)
+  credentials = rjson::fromJSON(file=creds)
   t <- 3 # time delay
   print("en-GB_KateVoice - UK")
   watson.tts.process(creds,"I am Kate from the United Kingdom",1)
