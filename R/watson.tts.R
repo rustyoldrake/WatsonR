@@ -1,11 +1,14 @@
 #' WatsonR - Text to Speech (TTS) - Speechify the Transcript; demand the voice you want
 #'
 #' Text to Speech
-#' @param TEXT to be made into audio; and Index 1-12 of Voice (see watson.tts.listvoices() for list)
+#' @param creds the name of the credentials file in json format
+#' @param transcript TEXT to be made into audio;
+#' @param voice_number Index 1-12 of Voice (see watson.tts.listvoices() for list)
 #' @return NOTHING
 #' @export
 
-watson.tts.process <- function(transcript,voice_number) {
+watson.tts.process <- function(creds,transcript,voice_number) {
+      credentials = rjson::fromJSON(,creds)
       voice_list <- watson.tts.listvoices()
       print("Text to Speech - Sending Transcript to TTS service....")
       url <- "https://stream.watsonplatform.net/text-to-speech/api/v1/synthesize"
@@ -16,7 +19,7 @@ watson.tts.process <- function(transcript,voice_number) {
 
       the_audio = RCurl::CFILE(filename, mode="wb")
       RCurl::curlPerform(url = paste(url,"?text=",transcript,"&voice=",voice_list[voice_number,],sep=""),
-                  userpwd = username_password_TTS,
+                  userpwd = paste(credentials$username,credentials$password,sep=":"),
                   httpheader=c(accept="audio/wav"),
                   writedata = the_audio@ref)
 
@@ -33,13 +36,15 @@ watson.tts.process <- function(transcript,voice_number) {
 #' WatsonR - Text to Speech (TTS) - List Voices Available From services
 #'
 #' Text to Speech - LIst of Voices
-#' @param NONE
+#' @param creds the name of the credentials file in json format
 #' @return list of voices from the TTS service
 #' @export
 
-watson.tts.listvoices <- function()
+watson.tts.listvoices <- function(creds)
 {
-  voices <- httr::GET(url=paste("https://stream.watsonplatform.net/text-to-speech/api/v1/voices"),authenticate(username_TTS,password_TTS))
+  credentials = rjson::fromJSON(,creds)
+  voices <- httr::GET(url=paste("https://stream.watsonplatform.net/text-to-speech/api/v1/voices"),
+                      authenticate(credentials$username,credentials$password))
   data <- httr::content(voices,"text")
   data <- as.data.frame(strsplit(as.character(data),"name"))
   data <- data[-c(1:2), ] # remove dud first row
@@ -70,48 +75,49 @@ watson.tts.listvoices <- function()
 #' WatsonR - Text to Speech (TTS) - Round The World Introductions -
 #'
 #' Text to Speech - LIst of Voices
-#' @param NONE
+#' @param creds the name of the credentials file in json format
 #' @return Everyone Talks
 #' @export
 
-watson.tts.demovoices <- function()
+watson.tts.demovoices <- function(creds)
 {
+  credentials = rjson::fromJSON(,creds)
   t <- 3 # time delay
   print("en-GB_KateVoice - UK")
-  watson.tts.process("I am Kate from the United Kingdom",1)
+  watson.tts.process(creds,"I am Kate from the United Kingdom",1)
   Sys.sleep(t)
   print("ja-JP_EmiVoice - Japan")
-  watson.tts.process("ho Japan. Em i",2)
+  watson.tts.process(creds,"ho Japan. Em i",2)
   Sys.sleep(t)
   print("en-US_AllisonVoice - USA")
-  watson.tts.process("I am Allison from Boise, Idaho",3)
+  watson.tts.process(creds,"I am Allison from Boise, Idaho",3)
   Sys.sleep(t)
   print("fr-FR_ReneeVoice - France")
-  watson.tts.process("Bonjour! Vive la France",4)
+  watson.tts.process(creds,"Bonjour! Vive la France",4)
   Sys.sleep(t)
   print("it-IT_FrancescaVoice - Italy")
-  watson.tts.process("Ciao! Io parlo Italiano.",5)
+  watson.tts.process(creds,"Ciao! Io parlo Italiano.",5)
   Sys.sleep(t)
   print("es-ES_LauraVoice - Spain")
-  watson.tts.process("Hola, Soy Laura, Espana",6)
+  watson.tts.process(creds,"Hola, Soy Laura, Espana",6)
   Sys.sleep(t)
   print("de-DE_BirgitVoice - Germany")
-  watson.tts.process("Deutchland. Danka. Angela Merkel",7)
+  watson.tts.process(creds,"Deutchland. Danka. Angela Merkel",7)
   Sys.sleep(t)
   print("es-ES_EnriqueVoice - Spain")
-  watson.tts.process("Hola, Soy Enrique. Futbol",8)
+  watson.tts.process(creds,"Hola, Soy Enrique. Futbol",8)
   Sys.sleep(t)
   print("de-DE_DieterVoice - Germany")
-  watson.tts.process("Deutchland. Danka David Hasselhoff",9)
+  watson.tts.process(creds,"Deutchland. Danka David Hasselhoff",9)
   Sys.sleep(t)
   print("en-US_LisaVoice - USA")
-  watson.tts.process("Good Afternoon. I'm your Boss Lisa from New York City",10)
+  watson.tts.process(creds,"Good Afternoon. I'm your Boss Lisa from New York City",10)
   Sys.sleep(t)
   print("en-US_MichaelVoice - USA")
-  watson.tts.process("Hello. I am Michael the Robot, From USA",11)
+  watson.tts.process(creds,"Hello. I am Michael the Robot, From USA",11)
   Sys.sleep(t)
   print("es-US_SofiaVoice - US Spanish")
-  watson.tts.process("Ola!  Soy Sofia.  Espanol",12)
+  watson.tts.process(creds,"Ola!  Soy Sofia.  Espanol",12)
   Sys.sleep(t)
 }
 

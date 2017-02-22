@@ -4,10 +4,14 @@
 \alias{watson.tts.process}
 \title{WatsonR - Text to Speech (TTS) - Speechify the Transcript; demand the voice you want}
 \usage{
-watson.tts.process(transcript, voice_number)
+watson.tts.process(creds, transcript, voice_number)
 }
 \arguments{
-\item{TEXT}{to be made into audio; and Index 1-12 of Voice (see watson.tts.listvoices() for list)}
+\item{creds}{the name of the credentials file in json format}
+
+\item{transcript}{TEXT to be made into audio;}
+
+\item{voice_number}{Index 1-12 of Voice (see watson.tts.listvoices() for list)}
 }
 \value{
 NOTHING

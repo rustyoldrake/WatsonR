@@ -4,7 +4,10 @@
 \alias{watson.tts.demovoices}
 \title{WatsonR - Text to Speech (TTS) - Round The World Introductions -}
 \usage{
-watson.tts.demovoices()
+watson.tts.demovoices(creds)
+}
+\arguments{
+\item{creds}{the name of the credentials file in json format}
 }
 \value{
 Everyone Talks

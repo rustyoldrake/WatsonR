@@ -4,7 +4,7 @@
 \alias{watson.pi.demo}
 \title{WatsonR - Personality Insights (PI) - DEMO}
 \usage{
-watson.pi.demo()
+watson.pi.demo(creds)
 }
 \arguments{
 \item{creds}{the name of the credentials file in json format}
