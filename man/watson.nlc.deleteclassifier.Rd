@@ -2,12 +2,15 @@
 % Please edit documentation in R/watson.nlc.R
 \name{watson.nlc.deleteclassifier}
 \alias{watson.nlc.deleteclassifier}
-\title{WatsonR - Natural Language Classifier (NLC) - DELETE Classifier}
+\title{WatsonR - Natural Language Classifier (NLC) - DELETE Classifier
+ Receives name of Classifier to delete; May not be able to do this until training complete}
 \usage{
-watson.nlc.deleteclassifier(kill_classifier)
+watson.nlc.deleteclassifier(creds, kill_classifier)
 }
 \arguments{
-\item{Classifier}{ID}
+\item{creds}{the name of the credentials file in json format}
+
+\item{kill_classifier}{Classifier ID}
 }
 \value{
 Message that you've killed the classifier (but not the service)

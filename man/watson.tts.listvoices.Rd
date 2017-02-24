@@ -4,7 +4,10 @@
 \alias{watson.tts.listvoices}
 \title{WatsonR - Text to Speech (TTS) - List Voices Available From services}
 \usage{
-watson.tts.listvoices()
+watson.tts.listvoices(creds)
+}
+\arguments{
+\item{creds}{the name of the credentials file in json format}
 }
 \value{
 list of voices from the TTS service

@@ -2,16 +2,20 @@
 % Please edit documentation in R/watson.nlc.R
 \name{watson.nlc.listallclassifiers}
 \alias{watson.nlc.listallclassifiers}
-\title{WatsonR - Natural Language Classifier (NLC) - LIST}
+\title{WatsonR - Natural Language Classifier (NLC) - LIST
+LIST ALL CLASSIFIERS AND RETURN NEAT LIST
+NLC2}
 \usage{
-watson.nlc.listallclassifiers()
+watson.nlc.listallclassifiers(creds)
 }
 \arguments{
-\item{NOTHING}{}
+\item{creds}{the name of the credentials file in json format}
 }
 \value{
 LIST OF CLASSIFIERS
 }
 \description{
+WatsonR - Natural Language Classifier (NLC) - LIST
+LIST ALL CLASSIFIERS AND RETURN NEAT LIST
 NLC2
 }

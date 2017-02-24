@@ -4,14 +4,20 @@
 \alias{watson.nlc.checkclassifierstatus}
 \title{WatsonR - Natural Language Classifier (NLC) - STATUS Check}
 \usage{
-watson.nlc.checkclassifierstatus(classifier_id)
+watson.nlc.checkclassifierstatus(creds, classifier_id)
 }
 \arguments{
-\item{Classifier}{ID}
+\item{creds}{the name of the credentials file in json format}
+
+\item{classifier_id}{Classifier ID}
 }
 \value{
 Classifier Status
 }
 \description{
-NLC3
+CHECK CLASSIFIER STATUS
+IF YOU GET MESSAGE BELOW - YOU NEED TO WAIT!
+Can take 15m for some medium size classifers (longer for larger ones)
+     "The classifier instance is in its training phase,
+     not yet ready to accept classify requests"
 }

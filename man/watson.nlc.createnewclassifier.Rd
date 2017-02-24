@@ -2,15 +2,21 @@
 % Please edit documentation in R/watson.nlc.R
 \name{watson.nlc.createnewclassifier}
 \alias{watson.nlc.createnewclassifier}
-\title{WatsonR - Natural Language Classifier (NLC) - CREATE}
+\title{WatsonR - Natural Language Classifier (NLC) - CREATE
+CREATE NEW CLASSIFIER - post /v1/classifiers -
+Creates a classifier with CSV data ## URL below no "/" after base url}
 \usage{
-watson.nlc.createnewclassifier(file, classifiername)
+watson.nlc.createnewclassifier(creds, csvfile, classifiername)
 }
 \arguments{
-\item{CSV}{File of Ground Truth to Train;  Name of the New Classifier}
+\item{creds}{the name of the credentials file in json format}
+
+\item{csvfile}{File of Ground Truth to Train;  Name of the New Classifier}
+
+\item{classifiername}{The name to assign to the new classifier}
 }
 \value{
-NOTHING
+initial status
 }
 \description{
 NLC1
