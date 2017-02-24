@@ -7,9 +7,9 @@
 #' @return NOTHING
 #' @export
 
-watson.tts.process <- function(creds,transcript,voice_number) {
+watson.tts.process <- function(creds, transcript, voice_number) {
       credentials = rjson::fromJSON(file=creds)
-      voice_list <- watson.tts.listvoices()
+      voice_list <- watson.tts.listvoices(creds)
       print("Text to Speech - Sending Transcript to TTS service....")
       url <- "https://stream.watsonplatform.net/text-to-speech/api/v1/synthesize"
       ## transcript <- URLencode("The quick brown fox jumped over the lazy crazy dog that barked")
