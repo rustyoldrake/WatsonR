@@ -71,7 +71,8 @@ watson.nlc.processtext <- function(creds, classifier_id, query_text){
 
   base_url_nlc = "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/"
   query_text <- utils::URLencode(query_text)
-  data <- RCurl::getURL(paste(base_url_nlc,classifier_id,"/classify","?text=", query_text,sep=""),userpwd = username_password)
+  data <- RCurl::getURL(paste(base_url_nlc,classifier_id,"/classify","?text=", query_text,sep=""),
+                        userpwd = username_password, .encoding = 'UTF-8')
   return(rjson::fromJSON(data))
 }
 ### end of function
