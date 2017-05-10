@@ -22,7 +22,7 @@ watson.tts.process <- function(creds, transcript, voice_number) {
                   userpwd = paste(credentials$username,credentials$password,sep=":"),
                   httpheader=c(accept="audio/wav"),
                   writedata = the_audio@ref)
-
+      RCurl::close(the_audio)
 
       print("now playing the WAV file on your computer... open filename.WAV....")
       system(paste("open",filename,"-a vlc"))
@@ -114,7 +114,7 @@ watson.tts.demovoices <- function(creds)
   watson.tts.process(creds,"Good Afternoon. I'm your Boss Lisa from New York City",10)
   Sys.sleep(t)
   print("en-US_MichaelVoice - USA")
-  watson.tts.process(creds,"Hello. I am Michael the Robot, From USA",11)
+  watson.tts.process(creds,"Hello. I am Michael the Robot, From USA",12)
   Sys.sleep(t)
   print("es-US_SofiaVoice - US Spanish")
   watson.tts.process(creds,"Ola!  Soy Sofia.  Espanol",12)

@@ -6,16 +6,17 @@
 #' @param creds the name of the credentials file in json format
 #' @param csvfile File of Ground Truth to Train;  Name of the New Classifier
 #' @param classifiername The name to assign to the new classifier
+#' @param lang  ISO standard 639 language code for classifier
 #' @return initial status
 #' @export
 #'
-watson.nlc.createnewclassifier <- function(creds, csvfile,classifiername) {
+watson.nlc.createnewclassifier <- function(creds, csvfile,classifiername, lang) {
   credentials = rjson::fromJSON(,creds)
   data = httr::POST(url="https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers",
               httr::authenticate(credentials$username,credentials$password),
               body = list(training_data = upload_file(csvfile),
-                          training_metadata = paste("{\"language\":\"en\",\"name\":\"",classifiername,"\"}",sep="")))
-  return(rjson::fromJSON(data))
+                          training_metadata = paste("{\"language\":\"",lang,"\",\"name\":\"",classifiername,"\"}",sep="")))
+  return(rjson::fromJSON(httr::content(data, "text", encoding = "UTF-8")))
 }
 
 
@@ -70,7 +71,8 @@ watson.nlc.processtext <- function(creds, classifier_id, query_text){
 
   base_url_nlc = "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/"
   query_text <- utils::URLencode(query_text)
-  data <- RCurl::getURL(paste(base_url_nlc,classifier_id,"/classify","?text=", query_text,sep=""),userpwd = username_password)
+  data <- RCurl::getURL(paste(base_url_nlc,classifier_id,"/classify","?text=", query_text,sep=""),
+                        userpwd = username_password, .encoding = 'UTF-8', .mapUnicode = TRUE)
   return(rjson::fromJSON(data))
 }
 ### end of function
