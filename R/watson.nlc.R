@@ -9,12 +9,12 @@
 #' @return initial status
 #' @export
 #'
-watson.nlc.createnewclassifier <- function(creds, csvfile,classifiername) {
+watson.nlc.createnewclassifier <- function(creds, csvfile,classifiername, lang) {
   credentials = rjson::fromJSON(,creds)
   data = httr::POST(url="https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers",
               httr::authenticate(credentials$username,credentials$password),
               body = list(training_data = upload_file(csvfile),
-                          training_metadata = paste("{\"language\":\"en\",\"name\":\"",classifiername,"\"}",sep="")))
+                          training_metadata = paste("{\"language\":\"",lang,"\",\"name\":\"",classifiername,"\"}",sep="")))
   return(rjson::fromJSON(data))
 }
 

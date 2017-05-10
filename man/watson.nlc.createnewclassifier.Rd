@@ -6,7 +6,7 @@
 CREATE NEW CLASSIFIER - post /v1/classifiers -
 Creates a classifier with CSV data ## URL below no "/" after base url}
 \usage{
-watson.nlc.createnewclassifier(creds, csvfile, classifiername)
+watson.nlc.createnewclassifier(creds, csvfile, classifiername, lang)
 }
 \arguments{
 \item{creds}{the name of the credentials file in json format}
