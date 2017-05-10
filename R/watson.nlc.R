@@ -6,6 +6,7 @@
 #' @param creds the name of the credentials file in json format
 #' @param csvfile File of Ground Truth to Train;  Name of the New Classifier
 #' @param classifiername The name to assign to the new classifier
+#' @param lang  ISO standard 639 language code for classifier
 #' @return initial status
 #' @export
 #'
@@ -15,7 +16,7 @@ watson.nlc.createnewclassifier <- function(creds, csvfile,classifiername, lang) 
               httr::authenticate(credentials$username,credentials$password),
               body = list(training_data = upload_file(csvfile),
                           training_metadata = paste("{\"language\":\"",lang,"\",\"name\":\"",classifiername,"\"}",sep="")))
-  return(rjson::fromJSON(data))
+  return(rjson::fromJSON(httr::content(data, "text", encoding = "UTF-8")))
 }
 
 

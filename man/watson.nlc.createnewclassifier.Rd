@@ -14,6 +14,8 @@ watson.nlc.createnewclassifier(creds, csvfile, classifiername, lang)
 \item{csvfile}{File of Ground Truth to Train;  Name of the New Classifier}
 
 \item{classifiername}{The name to assign to the new classifier}
+
+\item{lang}{ISO standard 639 language code for classifier}
 }
 \value{
 initial status
